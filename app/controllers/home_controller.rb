@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
 
-  def index;  end
+  def index
+    @names = ['mark', 'jasper', 'rex', 'jerome']
+  end
 
   def about; end
 
