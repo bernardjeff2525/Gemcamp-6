@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/home', to: 'home#index'
   get '/about', to: 'home#about'
   get '/contact-us', to: 'home#contact_us'
+
+  resources :posts
 end
