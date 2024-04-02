@@ -8,6 +8,10 @@
       <li class="nav-item active">
         <%= link_to 'HOME', root_path, class: "nav-link #{ 'active' if action_name == 'index' }" %>
       </li>
+      <li class="nav-item active">
+        <%= link_to 'POST LIST', posts_path, class: "nav-link #{ 'active' if action_name == 'index' && controller_name == 'posts' }" %>
+      </li>
+
       <li class="nav-item">
         <%= link_to 'ABOUT US', about_path, class: "nav-link #{ 'active' if action_name == 'about' }" %>
       </li>
