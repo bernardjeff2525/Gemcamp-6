@@ -1,5 +1,5 @@
 <!-- app/views/posts/new.html.erb -->
-<div class="container-md">
+
 <% if @post.errors.any? %>
   <div class="alert alert-danger" role="alert">
     <ul>
@@ -10,15 +10,14 @@
   </div>
 <% end %>
 <h1>New Post</h1>
-  <%= form_with model: @post do |form| %>
-    <div class="mb-3">
-      <%= form.label :title, class: 'form-label' %>
-      <%= form.text_field :title, class: 'form-control' %>
-    </div>
-    <div class="mb-3 ">
-      <%= form.label :content, class: 'form-label' %>
-      <%= form.text_area :content, class: 'form-control' %>
-    </div>
-    <%= form.submit class: 'btn btn-primary' %>
-  <% end %>
-</div>
+<%= form_with model: @post do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3 ">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>
