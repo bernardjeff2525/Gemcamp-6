@@ -1,0 +1,13 @@
+<div class="container-md">
+  <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+      <p class="notice"><%= flash[:notice] %></p>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger" role="alert">
+      <p class="alert"><%= flash[:alert] %></p>
+    </div>
+  <% end %>
+</div>
