@@ -11,7 +11,8 @@
       <td><%= post.title %></td>
       <td><%= post.created_at %></td>
       <td>
-        <%= link_to 'Detail', post_path(post), class: 'btn btn-sm btn-primary' %>
+        <%= link_to 'DETAIL', post_path(post), class: 'btn btn-sm btn-primary' %>
+        <%= link_to 'EDIT', edit_post_path(post), class: 'btn btn-sm btn-warning' %>
       </td>
     </tr>
   <% end %>
