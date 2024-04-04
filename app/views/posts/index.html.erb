@@ -2,15 +2,17 @@
 
 <table class="table table-success table-striped">
   <thead>
-  <td>title</td>
-  <td>content</td>
-  <td>action</td>
+  <td>TITLE</td>
+  <td>CONTENT</td>
+  <td>ACTION</td>
   </thead>
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.content %></td>
-      <td></td>
+      <td><%= post.created_at %></td>
+      <td>
+        <%= link_to 'Detail', post_path(post), class: 'btn btn-sm btn-primary' %>
+      </td>
     </tr>
   <% end %>
 </table>
