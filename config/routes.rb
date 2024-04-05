@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   get '/contact-us', to: 'home#contact_us'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 end
