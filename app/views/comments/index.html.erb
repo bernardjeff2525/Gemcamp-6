@@ -3,6 +3,7 @@
 <ul>
   <% @comments.each do |comment| %>
     <li><%= comment.content %>(<%= comment.created_at %>)</li>
+    <%= link_to 'Edit', edit_post_comment_path(@post, comment), class: 'btn btn-sm btn-warning' %>
   <% end %>
 </ul>
 
