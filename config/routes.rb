@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/contact-us', to: 'home#contact_us'
 
   resources :posts do
-    resources :comments
+    resources :comments, except: :show
   end
 end
