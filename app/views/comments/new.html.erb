@@ -1,4 +1,4 @@
 <!-- app/views/comments/new.html.erb -->
 
 <h1>Title: <%= @post.title %></h1>
- <%= render partial: 'form', locals: { comment: @comment } %>
+ <%= render partial: 'form', locals: { comment: @comment, path: post_comments_path(@post) } %>
