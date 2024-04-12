@@ -3,13 +3,15 @@
 <table class="table table-success table-striped">
   <thead>
   <td>TITLE</td>
-  <td>CONTENT</td>
+  <td>CREATION TIME</td>
+  <td>CATEGORIES</td>
   <td>ACTION</td>
   </thead>
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
       <td><%= post.created_at %></td>
+      <td><%= post.categories.pluck(:name).join(',') %></td>
       <td>
         <%= link_to 'DETAIL', post_path(post), class: 'btn btn-sm btn-primary' %>
         <%= link_to 'EDIT', edit_post_path(post), class: 'btn btn-sm btn-warning' %>
