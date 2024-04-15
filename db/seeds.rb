@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+10.times do
+  post = User.create(email: 'asdf', content: 'asdf')
+
+end
 categories = ['Technology', 'Travel', 'Lifestyle', 'Fashion', 'Food']
 categories.each do |category_name|
   Category.create(name: category_name)
