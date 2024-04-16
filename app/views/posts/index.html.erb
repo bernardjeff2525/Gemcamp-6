@@ -6,6 +6,7 @@
   <td>CREATION TIME</td>
   <td>AUTHOR</td>
   <td>CATEGORIES</td>
+  <td>COMMENT COUNT</td>
   <td>ACTION</td>
   </thead>
   <% @posts.each do |post| %>
@@ -14,6 +15,9 @@
       <td><%= post.created_at %></td>
       <td><%= post.user&.email %></td>
       <td><%= post.categories.pluck(:name).join(',') %></td>
+      <td>
+        <%= post.comments_count %>
+      </td>
       <td>
         <%= link_to 'DETAIL', post_path(post), class: 'btn btn-sm btn-primary' %>
         <% if user_signed_in? && post.user == current_user %>
