@@ -5,7 +5,8 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.includes(:categories, :user).order(created_at: :DESC)
+    @posts = Post.includes(:categories, :user)
+                 .order(created_at: :DESC)
   end
 
   def new
