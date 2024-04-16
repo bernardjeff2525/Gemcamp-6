@@ -7,16 +7,19 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 10.times do
-  post = User.create(email: 'asdf', content: 'asdf')
-
+  User.create(email: Faker::Internet.email, password: '123456')
 end
+
 categories = ['Technology', 'Travel', 'Lifestyle', 'Fashion', 'Food']
 categories.each do |category_name|
-  Category.create(name: category_name)
+  Category.find_or_create_by(name: category_name)
 end
 
 10.times do
-  post = Post.create(title: 'asdf', content: 'asdf')
+  post = Post.new(title: 'asdf', content: 'asdf')
+  post.user = User.all.sample
+  post.save
+  # post = Post.create(title: 'asdf', content: 'asdf', user: User.all.sample)
 
   rand(1..5).times do
     category = Category.all.sample
