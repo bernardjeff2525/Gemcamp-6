@@ -8,6 +8,7 @@
   <td>AUTHOR</td>
   <td>CATEGORIES</td>
   <td>COMMENT COUNT</td>
+  <td>IMAGE</td>
   <td>ACTION</td>
   </thead>
   <% @posts.each do |post| %>
@@ -19,6 +20,7 @@
       <td>
         <%= post.comments_count %>
       </td>
+      <td><%= image_tag post.image.url if post.image.present? %></td>
       <td>
         <%= link_to 'DETAIL', post_path(post), class: 'btn btn-sm btn-primary' %>
         <% if user_signed_in? && post.user == current_user %>
