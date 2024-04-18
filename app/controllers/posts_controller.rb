@@ -34,8 +34,9 @@ class PostsController < ApplicationController
         render plain: csv_string
       end
       format.json do
-        render json: { success: true }
+        render json: @posts.as_json
       end
+      format.xml { render xml: @posts.as_json }
     end
   end
 
