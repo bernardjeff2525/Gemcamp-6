@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem 'devise'
 gem 'faker'
 gem 'kaminari'
+gem 'rest-client'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

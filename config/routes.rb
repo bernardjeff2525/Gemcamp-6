@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/contact-us', to: 'home#contact_us'
 
   resources :posts do
+    get :api_news, on: :collection
     resources :comments, except: :show
   end
 

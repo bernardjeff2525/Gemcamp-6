@@ -76,6 +76,20 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def api_news
+    api_key = ENV['API_NEWS_KEY']
+    url = 'https://newsapi.org/v2/top-headlines'
+    params = { 'apiKey': api_key, country: 'ph' }
+    response = RestClient.get url, params: params
+
+    response = JSON.parse(response)
+    render json: response['articles']
+
+    response['articles'].each do |articles|
+
+    end
+  end
+
   private
 
   def set_post
