@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+
+  enum genre: { client: 0, admin: 1 }
 end
