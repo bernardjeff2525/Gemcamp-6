@@ -23,7 +23,7 @@
       <td><%= image_tag post.image.url if post.image.present? %></td>
       <td>
         <%= link_to 'DETAIL', post_path(post), class: 'btn btn-sm btn-primary' %>
-        <% if user_signed_in? && post.user == current_user %>
+        <% if current_user && (current_user == post.user || current_user.genre == 'admin') %>
           <%= link_to 'EDIT',
                       edit_post_path(post),
                       class: 'btn btn-sm btn-warning' %>
