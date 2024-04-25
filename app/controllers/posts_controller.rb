@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :validate_post_owner, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.includes(:categories, :user)
+    @posts = Post.published.includes(:categories, :user)
                  .order(created_at: :DESC)
 
     respond_to do |format|
@@ -101,6 +101,8 @@ class PostsController < ApplicationController
   end
 
   def validate_post_owner
+    return if current_user.genre == 'admin'
+
     unless @post.user == current_user
       flash[:alert] = 'the post not belongs to you'
       redirect_to posts_path
