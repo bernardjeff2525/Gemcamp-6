@@ -50,6 +50,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'rest-client'
 gem 'active_model_serializers'
+gem 'aasm'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
